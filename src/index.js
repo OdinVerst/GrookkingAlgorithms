@@ -1,10 +1,4 @@
-let add = (a, b) => {
-	return a + b;
-};
-console.log(add(2, 4));
+import Dijkstra from './common/dijkstras-al';
 
-async function test() {
-	await console.log(1);
-}
-
-test();
+//Dijkstra’s algorithm
+Dijkstra();
