@@ -1,8 +1,16 @@
+/**
+ * Swap (ES6)
+ * @param {*} items
+ * @param {*} firstIndex
+ * @param {*} secondIndex
+ */
 function swap(items, firstIndex, secondIndex) {
-	const temp = items[firstIndex];
-	items[firstIndex] = items[secondIndex];
-	items[secondIndex] = temp;
+	[items[firstIndex], items[secondIndex]] = [
+		items[secondIndex],
+		items[firstIndex]
+	];
 }
+
 
 function partition(items, left, right) {
 	var pivot = items[Math.floor((right + left) / 2)],
@@ -45,4 +53,6 @@ function test(arr) {
 	console.log(1);
 }
 console.log(quickSort([1, 2, 4, 3, 5]));
+console.log([1, 2, 4, 3, 5].sort());
+
 export default test;
