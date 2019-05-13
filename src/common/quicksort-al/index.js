@@ -1,8 +1,8 @@
 /**
  * Swap (ES6)
- * @param {*} items
- * @param {*} firstIndex
- * @param {*} secondIndex
+ * @param {Array} items
+ * @param {Number} firstIndex
+ * @param {Number} secondIndex
  */
 function swap(items, firstIndex, secondIndex) {
 	[items[firstIndex], items[secondIndex]] = [
@@ -11,31 +11,27 @@ function swap(items, firstIndex, secondIndex) {
 	];
 }
 
-
 function partition(items, left, right) {
-	var pivot = items[Math.floor((right + left) / 2)],
-		i = left,
-		j = right;
-
-	while (i <= j) {
-		while (items[i] < pivot) {
-			i++;
+	let pivot = items[Math.floor((right + left) / 2)];
+	while (left <= right) {
+		while (items[left] < pivot) {
+			left++;
 		}
-		while (items[j] > pivot) {
-			j--;
+		while (items[right] > pivot) {
+			right--;
 		}
-		if (i <= j) {
-			swap(items, i, j);
-			i++;
-			j--;
+		if (left <= right) {
+			swap(items, left, right);
+			left++;
+			right--;
 		}
 	}
-	return i;
+	return left;
 }
 
-var quickSort = function(items, left, right) {
-	var index;
+function quickSort(items, left, right) {
 	if (items.length > 1) {
+		let index;
 		left = typeof left != 'number' ? 0 : left;
 		right = typeof right != 'number' ? items.length - 1 : right;
 		index = partition(items, left, right);
@@ -47,12 +43,6 @@ var quickSort = function(items, left, right) {
 		}
 	}
 	return items;
-};
-
-function test(arr) {
-	console.log(1);
 }
-console.log(quickSort([1, 2, 4, 3, 5]));
-console.log([1, 2, 4, 3, 5].sort());
 
-export default test;
+export default quickSort;
