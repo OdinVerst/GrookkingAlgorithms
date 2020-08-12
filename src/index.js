@@ -1,10 +1,8 @@
-let add = (a, b) => {
-	return a + b;
-};
-console.log(add(2, 4));
+import Dijkstra from './common/dijkstras-al';
+import quickSort from './common/quicksort-al';
 
-async function test() {
-	await console.log(1);
-}
+//Dijkstra’s algorithm
+Dijkstra();
 
-test();
+let arr = [5, 1, 8, 7, 9];
+console.log(quickSort(arr));
