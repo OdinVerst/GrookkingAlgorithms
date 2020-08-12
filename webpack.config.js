@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	entry: {
-		app: ['@babel/polyfill', './src/index.js']
+		app: ['./src/index.js']
 	},
 	output: {
 		filename: '[name].js',
@@ -20,5 +20,6 @@ module.exports = {
 	},
 	devServer: {
 		overlay: true
-	}
+	},
+	devtool: 'source-map'
 };
