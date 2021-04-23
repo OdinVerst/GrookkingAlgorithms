@@ -5,10 +5,7 @@
  * @param {Number} secondIndex
  */
 function swap(items, firstIndex, secondIndex) {
-	[items[firstIndex], items[secondIndex]] = [
-		items[secondIndex],
-		items[firstIndex]
-	];
+	[items[firstIndex], items[secondIndex]] = [items[secondIndex], items[firstIndex]];
 }
 
 function partition(items, left, right) {
